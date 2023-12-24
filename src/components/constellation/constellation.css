@@ -1,0 +1,15 @@
+.constellation {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    background-color: #000; /* Dark background for stars */
+  }
+
+.dot {
+width: 20px;
+height: 20px;
+background-color: blue;
+border-radius: 50%;
+margin: 10px;
+cursor: pointer;
+}
