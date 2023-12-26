@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef  } from 'react';
 import { Stage, Layer} from 'react-konva';
 import StarPoint from '../stars/stars';
-const Constellation = () => {
+const Constellation = ({constellationData}) => {
 
   const stageRef = useRef(null);
 
@@ -10,12 +10,11 @@ const Constellation = () => {
     // Create stars on stage
     console.log(stageRef.current)
   }, []);
-
+  const stars =  constellationData.points.map((data,i) => <StarPoint key={i} points={data} /> ) 
   return (
     <Stage width={window.innerWidth} height={window.innerHeight} ref={stageRef}>
       <Layer>
-        {/* Render stars here */}
-        <StarPoint />
+        {stars}
       </Layer>
     </Stage>
   );
